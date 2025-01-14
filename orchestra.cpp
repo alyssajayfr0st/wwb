@@ -14,6 +14,7 @@ using namespace XoshiroCpp;
         int highroll = 0;
         double totalroll = 0;
         unsigned long rps = 0;
+        unsigned long cps = 0;
         bool end = false;
         bool ctrlCPressed = false;
         long endcount = 0;
@@ -92,8 +93,9 @@ unsigned long hourswasted = 0;
 void drawcall(){
     guage = rollcount / totalroll;
     Clear();
-    cout << "highest: " << highest << endl << "highest roll: " << highroll << endl << "total roll: " << totalroll << endl << "total runs: " << endcount << endl << "rolls/s: " << rps << endl << "average roll: " << setprecision(500) << guage << endl << "total sum of rolls: " << rollcount << endl << "time wasted: " << timewasted << " seconds " << minuteswasted << " minutes " << hourswasted << " hours" << endl;
+    cout << "highest: " << highest << endl << "highest roll: " << highroll << endl << "total roll: " << totalroll << endl << "total runs: " << endcount << endl << "rolls/s: " << rps << endl << "runs/s: " << cps << endl << "average roll: " << setprecision(500) << guage << endl << "total sum of rolls: " << rollcount << endl << "time wasted: " << timewasted << " seconds " << minuteswasted << " minutes " << hourswasted << " hours" << endl;
     rps = 0;
+    cps = 0;
     timewasted++;
     if(timewasted == 60){
         minuteswasted++;
@@ -174,8 +176,9 @@ int main(){
                 space = 0;
                 rezero = false;
                 endcount++;
-            }
-            else{};
+                cps++;
+            
+            
         seconds = timer1.elapsedSeconds();
         if(seconds > 1){
             drawcall();
@@ -188,6 +191,7 @@ int main(){
                 loop = false;
             }
         }
+            }else{};
     };
     now = time(0); // current time in seconds since epoch
     local_time = localtime(&now);
