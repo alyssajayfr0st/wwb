@@ -1,5 +1,5 @@
 ## Worlds Worst Simulator
-first coding project, prbably not great.
+first coding project, probably not great.
 
-reqires Xoshirocpp.hpp from
+reqires XoshiroCpp.hpp from
 https://github.com/Reputeless/Xoshiro-cpp
