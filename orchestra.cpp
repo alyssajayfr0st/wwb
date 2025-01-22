@@ -1,6 +1,5 @@
 #include <random>
 #include <iostream>
-#include <ctime>
 #include <chrono>
 #include "XoshiroCpp.hpp"
 #include <iomanip>
